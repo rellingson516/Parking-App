@@ -1,38 +1,68 @@
 package edu.elon.cs.elonparking;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 public class ChoosePassActivity extends Activity {
+
+    private final String FILENAME = "save.txt";
+    Spinner passes;
+    String pass = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_pass);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_choose_pass, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        passes = (Spinner)findViewById(R.id.passSelect);
+        try {
+            getPersistentData();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        return super.onOptionsItemSelected(item);
+        if(!pass.equals("")) {
+            ArrayAdapter adapter = (ArrayAdapter) passes.getAdapter();
+            int index = adapter.getPosition(pass);
+            passes.setSelection(index);
+        }
     }
+
+    public void onSelectPass(View view) {
+        pass = passes.getSelectedItem().toString();
+        nextPage();
+    }
+
+    private void getPersistentData() throws IOException {
+        Context context = getBaseContext();
+        BufferedReader reader = null;
+        try {
+            InputStream in = context.openFileInput(FILENAME);
+            reader = new BufferedReader(new InputStreamReader(in));
+            pass = reader.readLine();
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+    }
+
+    private void nextPage() {
+        Intent intent = new Intent(getApplicationContext(), SavePassActivity.class);
+        intent.putExtra("pass", pass);
+        startActivity(intent);
+    }
+
+
 }

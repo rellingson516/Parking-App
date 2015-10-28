@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="parking_pass">Select Your Parking Pass</string>
     <string-array name="passes">
+        <item>Select Pass</item>
         <item>Visitor</item>
         <item>CS</item>
         <item>EE</item>
@@ -20,4 +21,24 @@
         <item>OK</item>
         <item>LEV</item>
     </string-array>
+    <string-array name="buildings">
+        <item>Duke</item>
+        <item>Powell</item>
+        <item>Alamance</item>
+        <item>McCewen (Dining)</item>
+        <item>McCewen</item>
+        <item>Vriginia</item>
+        <item>Smith</item>
+        <item>etc...</item>
+    </string-array>
+    <string name="saveActivityMessage">Would you like us to save your pass for future use?</string>
+    <string name="title_activity_choose_building">ChooseBuildingActivity</string>
+    <string name="title_activity_save_pass">SavePassActivity</string>
+    <string name="Okay">OK</string>
+    <string name="go">GO</string>
+    <string name="no">NO</string>
+    <string name="building">Select the building</string>
+    <string name="title_activity_parking">ParkingActivity</string>
+    <string name="askForMaps">Directions?</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
