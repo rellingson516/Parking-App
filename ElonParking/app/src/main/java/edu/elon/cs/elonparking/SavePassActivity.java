@@ -23,7 +23,8 @@ public class SavePassActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_save_pass);
-
+        intent = getIntent();
+        pass = intent.getStringExtra("pass");
         intent = new Intent(getApplicationContext(),ChooseBuildingActivity.class);
     }
 
