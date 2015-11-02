@@ -8,6 +8,10 @@
     tools:context="edu.elon.cs.elonparking.ChoosePassActivity"
     android:background="#98002e">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
     <TextView android:text="@string/parking_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +21,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="90dp" />
+        android:layout_height="45dp" />
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="45dp"
@@ -29,7 +33,31 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="90dp" />
+        android:layout_height="45dp" />
+
+    <TextView android:text="@string/building"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:textColor="#d59f0f" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:entries="@array/buildings"
+        android:layout_gravity="center"
+        android:id="@+id/buildingSelect"
+        android:background="#ffffff"
+        android:textAlignment="center" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
 
     <Button
         android:layout_width="150dp"
