@@ -110,6 +110,7 @@ public  class ParkingDB {
         passes.put("LS", new String[] {"McMichael Lot"});
         passes.put("MP", new String[] {"Mill Point Lot"});
         passes.put("OK", new String[] {"Oaks Lot"});
+        passes.put("Visitor", new String[] {"Oaks Lot", "McMichael Lot", "Admissions Lot"});
 
     }
 
@@ -119,7 +120,7 @@ public  class ParkingDB {
         double long1 = loc1.getLongitude();
         String closest = "";
         double shortest = Double.MAX_VALUE;
-        if(true /*time and date stuff*/) {
+        if(pass.equals("Faculty/Staff") /*time and date stuff*/) {
             for(String key : lots.keySet()) {
                 GPSLocation loc2 = lots.get(key);
                 double lat2 = loc2.getLatitude();
