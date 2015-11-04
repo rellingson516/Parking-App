@@ -19,6 +19,7 @@
         <item>LS</item>
         <item>MP</item>
         <item>OK</item>
+        <item>Faculty/Staff</item>
     </string-array>
     <string-array name="buildings">
         <item>Select Building</item>
