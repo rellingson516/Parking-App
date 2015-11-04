@@ -19,18 +19,40 @@
         <item>LS</item>
         <item>MP</item>
         <item>OK</item>
-        <item>LEV</item>
     </string-array>
     <string-array name="buildings">
         <item>Select Building</item>
-        <item>Duke</item>
-        <item>Powell</item>
+        <item>Academic Pavillion</item>
         <item>Alamance</item>
-        <item>McCewen (Dining)</item>
-        <item>McCewen</item>
-        <item>Vriginia</item>
+        <item>Arts West</item>
+        <item>Carolina</item>
+        <item>Colonnades</item>
+        <item>Downtown Elon</item>
+        <item>Duke</item>
+        <item>Global</item>
+        <item>Gym</item>
+        <item>HBB</item>
+        <item>Honors</item>
+        <item>KOBC</item>
+        <item>Lakeside</item>
+        <item>Library</item>
+        <item>Lindner</item>
+        <item>Long</item>
+        <item>McEwen</item>
+        <item>McEwen (Dining)</item>
+        <item>McMichael</item>
+        <item>Mill Point</item>
+        <item>Mooney</item>
+        <item>Mosely Center</item>
+        <item>Oaks</item>
+        <item>PAC</item>
+        <item>Powell</item>
+        <item>Danieley Center</item>
+        <item>Sloan</item>
         <item>Smith</item>
-        <item>etc...</item>
+        <item>West</item>
+        <item>Whitley/Carlton</item>
+
     </string-array>
     <string name="saveActivityMessage">Would you like us to save your pass for future use?</string>
     <string name="title_activity_choose_building">ChooseBuildingActivity</string>

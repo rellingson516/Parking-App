@@ -16,18 +16,12 @@
         android:theme="@android:style/Theme.NoTitleBar"
         android:screenOrientation="portrait">
         <activity android:name=".ChoosePassActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ChooseBuildingActivity" >
-        </activity>
-        <activity
-            android:name=".SavePassActivity"
-            android:label="@string/title_activity_save_pass"
-            android:theme="@android:style/Theme.Holo.Dialog" >
         </activity>
         <activity
             android:name=".ParkingActivity"

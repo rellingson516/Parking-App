@@ -3,9 +3,10 @@ package edu.elon.cs.elonparking;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
@@ -27,19 +28,30 @@ public class ChoosePassActivity extends Activity {
     String pass = "";
     Spinner buildings;
     String building;
+    Bitmap bitmap;
+    Context context;
+
+//    public ChoosePassActivity(Context context, AttributeSet attrs) {
+//        //super(context, attrs);
+//
+//        // remember the context for finding resources
+//        this.context = context;
+//
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_pass);
-        passes = (Spinner)findViewById(R.id.passSelect);
+        passes = (Spinner) findViewById(R.id.passSelect);
         buildings = (Spinner) findViewById(R.id.buildingSelect);
+       // bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.elonbackground);
         try {
             getPersistentData();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(!pass.equals("")) {
+        if (!pass.equals("")) {
             ArrayAdapter adapter = (ArrayAdapter) passes.getAdapter();
             int index = adapter.getPosition(pass);
             passes.setSelection(index);
@@ -50,8 +62,8 @@ public class ChoosePassActivity extends Activity {
         pass = passes.getSelectedItem().toString();
         building = buildings.getSelectedItem().toString();
         nextPage();
-    }
 
+}
     private void getPersistentData() throws IOException {
         Context context = getBaseContext();
         BufferedReader reader = null;
@@ -59,7 +71,6 @@ public class ChoosePassActivity extends Activity {
             InputStream in = context.openFileInput(FILENAME);
             reader = new BufferedReader(new InputStreamReader(in));
             pass = reader.readLine();
-            System.out.print(pass);
         } finally {
             if (reader != null) {
                 reader.close();
@@ -73,7 +84,6 @@ public class ChoosePassActivity extends Activity {
         try {
             OutputStream out = context.openFileOutput(FILENAME, Context.MODE_PRIVATE);
             writer = new OutputStreamWriter(out);
-            System.out.print(pass);
             writer.write(pass);
         } finally {
             if (writer != null) {
@@ -83,9 +93,9 @@ public class ChoosePassActivity extends Activity {
     }
 
     private void nextPage() {
-        if(pass.equals("Select Pass")) {
+        if (pass.equals("Select Pass")) {
             Toast.makeText(getApplicationContext(), "Please select a pass", Toast.LENGTH_SHORT).show();
-        } else if(building.equals("Select Building")) {
+        } else if (building.equals("Select Building")) {
             Toast.makeText(getApplicationContext(), "Please select a building", Toast.LENGTH_SHORT).show();
         } else {
             try {
