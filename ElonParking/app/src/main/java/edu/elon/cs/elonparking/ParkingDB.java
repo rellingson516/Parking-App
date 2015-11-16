@@ -6,7 +6,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 
 /**
  * Created by rellingson on 11/3/2015.
@@ -77,11 +79,6 @@ public  class ParkingDB {
                 line = reader.readLine();
             }
 
-            for (String key: lots.keySet()) {
-                System.out.println(lots.get(key).toString());
-            }
-
-
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -115,12 +112,16 @@ public  class ParkingDB {
     }
 
     public String findClosestLot(String building, String pass) {
+        Calendar calendar = Calendar.getInstance();
         GPSLocation loc1 = buildings.get(building);
         double lat1 = loc1.getLatitude();
         double long1 = loc1.getLongitude();
         String closest = "";
         double shortest = Double.MAX_VALUE;
-        if(pass.equals("Faculty/Staff") /*time and date stuff*/) {
+        if(pass.equals("Faculty/Staff") || calendar.get(Calendar.HOUR_OF_DAY) >= 18 ||
+                (calendar.get(Calendar.HOUR_OF_DAY) <= 7 && calendar.get(Calendar.MINUTE) <= 30) ||
+                calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY ||
+                calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
             for(String key : lots.keySet()) {
                 GPSLocation loc2 = lots.get(key);
                 double lat2 = loc2.getLatitude();
@@ -153,6 +154,10 @@ public  class ParkingDB {
 
 
         return closest;
+    }
+
+    public GPSLocation getLotLocation(String name) {
+        return lots.get(name);
     }
 
 

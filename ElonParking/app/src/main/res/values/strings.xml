@@ -24,10 +24,12 @@
     <string-array name="buildings">
         <item>Select Building</item>
         <item>Academic Pavillion</item>
+        <item>Admissions Building</item>
         <item>Alamance</item>
         <item>Arts West</item>
         <item>Carolina</item>
         <item>Colonnades</item>
+        <item>Danieley Center</item>
         <item>Downtown Elon</item>
         <item>Duke</item>
         <item>Global</item>
@@ -48,7 +50,6 @@
         <item>Oaks</item>
         <item>PAC</item>
         <item>Powell</item>
-        <item>Danieley Center</item>
         <item>Sloan</item>
         <item>Smith</item>
         <item>West</item>

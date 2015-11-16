@@ -11,7 +11,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="30dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -24,9 +24,31 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="150dp" />
+        android:layout_height="40dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="filler text"
+        android:id="@+id/lotText"
+        android:gravity="center"
+        android:textColor="#d59f0f"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:id="@+id/visitorText"
+        android:gravity="center"
+        android:textColor="#d59f0f"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
 
     <Button
+        android:id="@+id/directions"
         android:layout_width="300dp"
         android:layout_height="90dp"
         android:text="@string/askForMaps"
